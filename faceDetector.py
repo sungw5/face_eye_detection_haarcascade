@@ -1,10 +1,10 @@
 import cv2
-import sys
 
 # load the trained data on frontal faces from opencv
 trainedFaceData = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-#img = cv2.imread('buspasspic.jpeg')
+#img = cv2.imread('imagepath')
+#videoCapture = cv2.VideoCapture('videopath)
 videoCapture = cv2.VideoCapture(0)
 
 while True:
@@ -20,7 +20,7 @@ while True:
     for i in range(len(faceCoordinates)):
         (x, y, w, h) = faceCoordinates[i]
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2) # imgfile, coordinates1, coordinates2, color, thickness
-        print(x,y,w,h)
+        print("x: ", x, "y: ", y, "width from offset: ", w, "height from offset: ", h)
 
     cv2.imshow('Video', frame) #display
 
@@ -30,22 +30,3 @@ while True:
 videoCapture.release()
 cv2.destroyAllWindows()
 print("************  Exit Camera  ************ ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print("Tyler's faceDetector") 
